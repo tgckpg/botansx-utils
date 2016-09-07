@@ -80,4 +80,9 @@ module.exports = {
 
 		return gluedStr.substr( 0, gluedStr.length - 1 );
 	}
+
+	, arrTrimFilter: function( arr )
+	{
+		return Array.from( arr, x => x.trim() ).filter( x => x );
+	}
 };
