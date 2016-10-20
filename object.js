@@ -11,7 +11,7 @@ var cloneObj = function( o )
 		return clone;
 	}
 
-	if ( o instanceof Array )
+	else if ( o instanceof Array )
 	{
 		clone = [];
 
@@ -23,7 +23,13 @@ var cloneObj = function( o )
 		return clone;
 	}
 
-	if ( o instanceof Object )
+	else if ( o instanceof RegExp )
+	{
+		clone = new RegExp( o );
+		return clone;
+	}
+
+	else if ( o instanceof Object )
 	{
 		for ( var p in o )
 		{
