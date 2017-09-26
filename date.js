@@ -11,12 +11,12 @@ var DAY = [ "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "S
 
 var getOrdinalSuffix = function(day)
 {
-	if (day < 4 || ( 20 < day && day < 24 )) {
-		if (day == 1 || day == 21) return "st";
-		else if (day == 2 || day == 22) return "nd";
-		else if (day == 3 || day == 23) return "rd";
-	}
-	else if (day == 31) return "st";
+	if( day < 1 || 31 < day )
+		throw new Error( "Day is out of range 1 <= day <= 31" );
+
+	if ( day == 1 || day == 21 || day == 31 ) return "st";
+	else if ( day == 2 || day == 22 ) return "nd";
+	else if ( day == 3 || day == 23 ) return "rd";
 	return "th";
 };
 
